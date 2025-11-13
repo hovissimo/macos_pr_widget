@@ -193,6 +193,14 @@ This means you accidentally selected the wrong scheme! Here's how to fix it:
    - Look at the very top-center of the window - it might still be processing
    - Wait a bit longer; the first time can take a few minutes
 
+❌ **"Project is damaged and cannot be opened"** or **"PBXSourcesBuildPhase unrecognized selector"**:
+   - This is an Xcode cache issue, not a problem with the project file
+   - **Solution 1**: Close Xcode, delete `~/Library/Developer/Xcode/DerivedData/*`, reopen
+   - **Solution 2**: Close Xcode, delete `PRWidget.xcodeproj/xcuserdata`, reopen
+   - **Solution 3**: Clone the repository fresh in a new location
+   - See XCODE_TROUBLESHOOTING.md for detailed steps
+   - **Prevention**: Always close Xcode before pulling changes
+
 ### Visual Guide: Where to Look in Xcode
 
 When you open the project, here's what to look for:
