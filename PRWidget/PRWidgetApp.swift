@@ -25,7 +25,7 @@ struct ConfigurationView: View {
                 Section(header: Text("GitHub Settings")) {
                     TextField("GitHub Token", text: $githubToken)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .help("Personal Access Token with repo scope")
+                        .help("Personal Access Token (fine-grained or classic) with repository access")
                     
                     TextField("Repository Owner", text: $owner)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -40,13 +40,16 @@ struct ConfigurationView: View {
                     Text("To get a GitHub Personal Access Token:")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("1. Go to GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)")
+                    Text("1. Go to GitHub Settings > Developer settings > Personal access tokens")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("2. Generate new token with 'repo' scope")
+                    Text("2. Choose 'Fine-grained tokens' (recommended) or 'Tokens (classic)'")
                         .font(.caption)
                         .foregroundColor(.secondary)
-                    Text("3. Copy the token and paste it above")
+                    Text("3. Generate token with repository access and pull request read permissions")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Text("4. Copy the token and paste it above")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }

@@ -40,6 +40,23 @@ A macOS desktop widget that tracks the status of your open GitHub pull requests.
 ## Configuration
 
 1. **Get a GitHub Personal Access Token**:
+   
+   GitHub supports two types of tokens. **Fine-grained tokens are recommended** as they offer better security:
+   
+   **Option A: Fine-grained Personal Access Token (Recommended)**
+   - Go to [GitHub Settings > Personal access tokens > Fine-grained tokens](https://github.com/settings/tokens?type=beta)
+   - Click "Generate new token"
+   - Give it a descriptive name (e.g., "PR Widget")
+   - Set repository access and select your repository
+   - Grant these permissions:
+     - Pull requests: Read-only
+     - Metadata: Read-only
+     - Checks: Read-only
+     - Commit statuses: Read-only
+   - Click "Generate token"
+   - **Copy the token immediately** (you won't be able to see it again)
+   
+   **Option B: Classic Personal Access Token**
    - Go to [GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)](https://github.com/settings/tokens)
    - Click "Generate new token (classic)"
    - Give it a descriptive name (e.g., "PR Widget")

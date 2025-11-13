@@ -26,6 +26,27 @@ In Xcode:
 
 ## Step 2: Get Your GitHub Token
 
+GitHub supports two types of Personal Access Tokens. **Fine-grained tokens** (recommended) are the newer format:
+
+### Option A: Fine-grained Personal Access Token (Recommended)
+
+1. Go to https://github.com/settings/tokens?type=beta
+2. Click **"Generate new token"**
+3. Give it a name like "PR Widget Access"
+4. Set expiration (recommended: 90 days or less)
+5. Under **"Repository access"**, select:
+   - **"Only select repositories"** and choose your repository, OR
+   - **"All repositories"** if you want flexibility
+6. Under **"Permissions"**, expand **"Repository permissions"** and set:
+   - **Pull requests**: Read-only access
+   - **Metadata**: Read-only access (automatically selected)
+   - **Checks**: Read-only access
+   - **Commit statuses**: Read-only access
+7. Click **"Generate token"**
+8. **IMPORTANT**: Copy the token immediately - you won't be able to see it again!
+
+### Option B: Classic Personal Access Token
+
 1. Go to https://github.com/settings/tokens
 2. Click **"Tokens (classic)"** in the left sidebar
 3. Click **"Generate new token"** → **"Generate new token (classic)"**

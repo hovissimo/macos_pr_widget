@@ -106,6 +106,13 @@ The widget uses the following GitHub REST API v3 endpoints:
 - Stored in macOS UserDefaults
 - App Sandbox restricts access to token
 - Token not exposed in UI after entry
+- Supports both fine-grained and classic GitHub tokens
+
+### ✅ Token Format
+- Uses Bearer token authentication (RFC 6750)
+- Compatible with GitHub's fine-grained tokens (recommended)
+- Compatible with classic Personal Access Tokens
+- Fine-grained tokens provide better security with granular permissions
 
 ### ✅ Network Security
 - All API calls use HTTPS
@@ -184,7 +191,7 @@ All requirements from the problem statement have been implemented:
 - macOS 14.0+ (Sonoma or later)
 - Xcode 15.0+
 - Swift 5.0+
-- GitHub Personal Access Token with `repo` scope
+- GitHub Personal Access Token (fine-grained or classic)
 
 ## License
 
