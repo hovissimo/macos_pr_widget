@@ -169,6 +169,16 @@ This means you accidentally selected the wrong scheme! Here's how to fix it:
    - Check that you see "My Mac" next to it
    - Try: Click **Product** menu → **Clean Build Folder**, then press ⌘R again
 
+❌ **"Failed to load widget" error** or **WidgetKit error**:
+   - This usually happens after a build. Don't worry - it's fixed!
+   - The widget files were updated to fix configuration issues
+   - Try these steps:
+     1. Click **Product** menu → **Clean Build Folder** (⌘⇧K)
+     2. Close Xcode completely
+     3. Reopen the project
+     4. Build and run again
+   - If the error persists, restart your Mac (sometimes WidgetKit caches need a full restart)
+
 ❌ **"Code signing" error**:
    - Make sure "Automatically manage signing" is checked
    - Make sure you've signed in with your Apple ID

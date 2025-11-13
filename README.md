@@ -98,6 +98,7 @@ You accidentally selected the wrong scheme! This is the #1 most common issue:
 - **PRWidgetExtension** scheme = For debugging the widget itself (advanced, use later)
 
 **If you see other errors:**
+- **"Failed to load widget"** or **WidgetKit error**: Clean build folder (⌘⇧K), close Xcode, reopen, and build again. If it persists, restart your Mac.
 - Make sure you selected "PRWidget" as the scheme (not PRWidgetExtension)
 - Make sure "My Mac" is selected as the destination
 - Try clicking **Product** menu > **Clean Build Folder**, then build again

@@ -21,7 +21,8 @@
 		1A000008000000000000008 /* GitHubAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIService.swift; sourceTree = "<group>"; };
 		1A00000A00000000000000A /* PRWidget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PRWidget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A00000C00000000000000C /* PRWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PRWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A00000E00000000000000E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A00000F00000000000000F /* PRWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PRWidget.entitlements; sourceTree = "<group>"; };
+		1A00001600000000000001G /* PRWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PRWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				1A000002000000000000002 /* PRWidgetApp.swift */,
+				1A00000F00000000000000F /* PRWidget.entitlements */,
 			);
 			path = PRWidget;
 			sourceTree = "<group>";
@@ -126,7 +128,7 @@
 				1A000004000000000000004 /* PRWidget.swift */,
 				1A000006000000000000006 /* Models.swift */,
 				1A000008000000000000008 /* GitHubAPIService.swift */,
-				1A00000E00000000000000E /* Info.plist */,
+				1A00001600000000000001G /* PRWidgetExtension.entitlements */,
 			);
 			path = PRWidgetExtension;
 			sourceTree = "<group>";
@@ -394,13 +396,16 @@
 		1A00011000000000000002F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PRWidgetExtension/PRWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PRWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PR Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSExtension = {
+					NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				};
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -418,13 +423,16 @@
 		1A00012000000000000003F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PRWidgetExtension/PRWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PRWidgetExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PR Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSExtension = {
+					NSExtensionPointIdentifier = "com.apple.widgetkit-extension";
+				};
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
