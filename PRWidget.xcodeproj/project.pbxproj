@@ -11,6 +11,7 @@
 		1A000003000000000000003 /* PRWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000004000000000000004 /* PRWidget.swift */; };
 		1A000005000000000000005 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000006000000000000006 /* Models.swift */; };
 		1A000007000000000000007 /* GitHubAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A000008000000000000008 /* GitHubAPIService.swift */; };
+		1A00001400000000000001C /* PRWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A00000C00000000000000C /* PRWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,76 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A00000F00000000000000F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A000001000000000000001 /* PRWidgetApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A00001A00000000000001A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A000003000000000000003 /* PRWidget.swift in Sources */,
+				1A000005000000000000005 /* Models.swift in Sources */,
+				1A000007000000000000007 /* GitHubAPIService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A00001100000000000001E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A00001B00000000000001B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A00001200000000000001D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1A00001400000000000001C /* PRWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXContainerItemProxy section */
+		1A00001500000000000001C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A0000B000000000000000B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A00009000000000000009F;
+			remoteInfo = PRWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		1A00001300000000000001C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A00009000000000000009F /* PRWidgetExtension */;
+			targetProxy = 1A00001500000000000001C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXGroup section */
 		1A00003000000000000003F /* PRWidget */ = {
@@ -85,11 +156,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A00008000000000000008F /* Build configuration list for PBXNativeTarget "PRWidget" */;
 			buildPhases = (
+				1A00000F00000000000000F /* Sources */,
 				1A00001000000000000001F /* Frameworks */,
+				1A00001100000000000001E /* Resources */,
+				1A00001200000000000001D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1A00001300000000000001C /* PBXTargetDependency */,
 			);
 			name = PRWidget;
 			productName = PRWidget;
@@ -100,7 +175,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A0000A000000000000000F /* Build configuration list for PBXNativeTarget "PRWidgetExtension" */;
 			buildPhases = (
+				1A00001A00000000000001A /* Sources */,
 				1A00002000000000000002F /* Frameworks */,
+				1A00001B00000000000001B /* Resources */,
 			);
 			buildRules = (
 			);
