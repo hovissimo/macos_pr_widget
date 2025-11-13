@@ -1,1 +1,148 @@
-# macos_pr_widget
+# macOS PR Widget
+
+A macOS desktop widget that tracks the status of your open GitHub pull requests.
+
+## Features
+
+- **Reviewer Status**: Shows all reviewers and their review status (Approved ✓, Changes Requested ✗, Pending ⏳, Commented 💬)
+- **CI/CD Checks**: Displays whether all GitHub Actions checks are passing
+- **Failed Checks**: Shows which specific checks have failed
+- **Branch Status**: Indicates if the PR branch is out of date with the base branch
+- **Visual Indicators**: Color-coded status indicators for quick scanning
+- **Auto-refresh**: Updates every 5 minutes automatically
+
+## Requirements
+
+- macOS 14.0 or later
+- Xcode 15.0 or later (for building)
+- GitHub Personal Access Token with `repo` scope
+
+## Installation
+
+### Building from Source
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/hovissimo/macos_pr_widget.git
+   cd macos_pr_widget
+   ```
+
+2. Open the project in Xcode:
+   ```bash
+   open PRWidget.xcodeproj
+   ```
+
+3. Build and run the project:
+   - Select the `PRWidget` scheme
+   - Click the Run button or press ⌘R
+   - The configuration app will open
+
+## Configuration
+
+1. **Get a GitHub Personal Access Token**:
+   - Go to [GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)](https://github.com/settings/tokens)
+   - Click "Generate new token (classic)"
+   - Give it a descriptive name (e.g., "PR Widget")
+   - Select the `repo` scope (full control of private repositories)
+   - Click "Generate token"
+   - **Copy the token immediately** (you won't be able to see it again)
+
+2. **Configure the Widget**:
+   - Run the PRWidget app
+   - Enter your GitHub Personal Access Token
+   - Enter the repository owner (username or organization)
+   - Enter the repository name
+   - Click "Save Configuration"
+
+3. **Add the Widget to Your Desktop**:
+   - Right-click on your desktop or notification center
+   - Select "Edit Widgets"
+   - Search for "GitHub PR Status"
+   - Drag the widget to your desired location
+   - Choose your preferred size (Medium or Large)
+
+## Usage
+
+Once configured, the widget will:
+- Automatically fetch your open pull requests every 5 minutes
+- Display up to 3 PRs in medium size (more in large size)
+- Show color-coded status indicators:
+  - 🟢 Green: All checks passed, all reviews approved, branch up to date
+  - 🟡 Yellow: Pending reviews or checks
+  - 🟠 Orange: Changes requested or branch out of date
+  - 🔴 Red: Failed checks
+
+## Widget Information Display
+
+For each PR, the widget shows:
+
+1. **PR Number and Title**: `#123 Add new feature`
+2. **Reviewers**: Username with status indicator
+   - 🟢 Approved
+   - 🔴 Changes Requested
+   - 🟡 Pending
+   - 🔵 Commented
+3. **Checks**: Pass/Fail count and failed check names
+   - `✓ 2/3 (Tests)` means 2 of 3 checks passed, Tests failed
+4. **Branch Status**: Warning if branch is out of date
+   - `⚠️ Out of date` means the base branch has new commits
+
+## Privacy & Security
+
+- Your GitHub token is stored locally in macOS UserDefaults
+- All API calls are made directly to GitHub's API
+- No data is sent to third-party services
+- The widget uses macOS App Sandbox for security
+
+## Troubleshooting
+
+### Widget shows "No open PRs"
+- Verify your repository owner and name are correct
+- Check that you have open pull requests in the repository
+- Ensure your GitHub token has the correct permissions
+
+### Widget not updating
+- Check your internet connection
+- Verify your GitHub token is still valid
+- Try force-quitting and restarting the widget
+
+### Configuration not saving
+- Make sure the app has permission to write to UserDefaults
+- Check Console.app for any error messages
+
+## Development
+
+### Project Structure
+
+```
+PRWidget/
+├── PRWidget/                    # Main configuration app
+│   ├── PRWidgetApp.swift       # App entry point and configuration UI
+│   └── PRWidget.entitlements   # App permissions
+├── PRWidgetExtension/          # Widget extension
+│   ├── PRWidget.swift          # Widget entry point and UI
+│   ├── Models.swift            # Data models
+│   ├── GitHubAPIService.swift  # GitHub API integration
+│   └── Info.plist              # Extension configuration
+└── PRWidget.xcodeproj/         # Xcode project
+```
+
+### API Endpoints Used
+
+The widget uses the following GitHub API endpoints:
+- `GET /repos/{owner}/{repo}/pulls` - List open pull requests
+- `GET /repos/{owner}/{repo}/pulls/{number}/reviews` - Get PR reviews
+- `GET /repos/{owner}/{repo}/commits/{ref}/check-runs` - Get check runs
+- `GET /repos/{owner}/{repo}/compare/{base}...{head}` - Compare branches
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Acknowledgments
+
+Built with SwiftUI and WidgetKit for macOS.
